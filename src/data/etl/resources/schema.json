@@ -1,0 +1,48 @@
+{
+  "BigQuery Schema": [
+    {
+      "name": "id",
+      "type": "STRING"
+    },
+    {
+      "name": "service_date",
+      "type": "DATE"
+    },
+    {
+      "name": "vehicle_number",
+      "type": "INT64"
+    },
+    {
+      "name": "route_number",
+      "type": "INT64"
+    },
+    {
+      "name": "direction",
+      "type": "INT64"
+    },
+    {
+      "name": "service_key",
+      "type": "STRING"
+    },
+    {
+      "name": "trip_number",
+      "type": "INT64"
+    },
+    {
+      "name": "dwell",
+      "type": "TIME"
+    },
+    {
+      "name": "location_id",
+      "type": "INT64"
+    },
+    {
+      "name": "x_coordinate",
+      "type": "FLOAT64"
+    },
+    {
+      "name": "y_coordinate",
+      "type": "FLOAT64"
+    }
+  ]
+}

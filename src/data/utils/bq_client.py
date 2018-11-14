@@ -38,7 +38,7 @@ def create_table(client, dataset_id, table_name, schema_json):
     with open(schema_json, 'r') as f:
         schema_dict = json.load(f)
 
-    for field in schema_dict:
+    for field in schema_dict["BigQuery Schema"]:
         schema.append(bigquery.SchemaField(field["name"], field["type"]))
     dataset_ref = client.dataset(dataset_id)
     table_ref = dataset_ref.table(table_name)
