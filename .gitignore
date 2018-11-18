@@ -83,3 +83,7 @@ data/raw
 
 # Credential files
 credentials/
+
+# node related
+node_modules/
+package-lock.json

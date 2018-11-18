@@ -6,7 +6,7 @@ function uuidv4() {
   });
 }
 
-// converts seconds of day to time
+// converts seconds of day to time 45060
 function convertSeconds(sec) {
   var hrs = Math.floor(sec / 3600);
   var min = Math.floor((sec - (hrs * 3600)) / 60);
@@ -21,13 +21,23 @@ function convertSeconds(sec) {
 
 // converts the date string to date format recognized by bigquery
 function makeDate(datestring) {
-  var parts = datestring.split(':');
-  var dateparts = [parts[0].substring(5, 9), parts[0].substring(2, 5), parts[0].substring(0, 2)]
-  var date = dateparts.join("-")
-  var string_date = Date(date)
-  var split_date = string_date.split(" ");
- var months = {Jan: "01",Feb: "02",Mar: "03",Apr: "04",May: "05",Jun: "06",Jul: "07",Aug: "08",Sep: "09",Oct: "10",Nov: "11",Dec: "12"};
- return split_date[3]+"-"+months[split_date[1]]+"-"+split_date[2];
+    var parts = datestring.split(':');
+    var dateparts = [parts[0].substring(5, 9), parts[0].substring(2, 5), parts[0].substring(0, 2)]
+    var months = {
+        JAN: "01",
+        FEB: "02",
+        MAR: "03",
+        APR: "04",
+        MAY: "05",
+        JUN: "06",
+        JUL: "07",
+        AUG: "08",
+        SEP: "09",
+        OCT: "10",
+        NOV: "11",
+        DEC: "12"
+    };
+    return dateparts[0] + "-" + months[dateparts[1].toUpperCase()] + "-" + dateparts[2];
 }
 
 // converts a second value to a big query time value
@@ -71,8 +81,15 @@ function transform(line) {
   stopEvent.x_coordinate = values[22]
   stopEvent.y_coordinate = values[23];
 
+  return stopEvent;
+}
 
-  var jsonStopEvent = JSON.stringify(stopEvent);
 
-  return jsonStopEvent;
+// exports included for mocha testing
+if (typeof module !== 'undefined' && module.exports != null) {
+    exports.uuidv4 = uuidv4;
+    exports.convertSeconds = convertSeconds;
+    exports.makeDate = makeDate;
+    exports.makeTime = makeTime;
+    exports.transform = transform;
 }
