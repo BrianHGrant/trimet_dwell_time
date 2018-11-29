@@ -1,3 +1,4 @@
+const proj4 = require("./proj4js.js")
 // creates a random uuid for operation
 function uuidv4() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -6,7 +7,7 @@ function uuidv4() {
   });
 }
 
-// converts seconds of day to time 45060
+// converts seconds of day to time
 function convertSeconds(sec) {
   var hrs = Math.floor(sec / 3600);
   var min = Math.floor((sec - (hrs * 3600)) / 60);
@@ -81,7 +82,7 @@ function transform(line) {
   stopEvent.x_coordinate = values[22]
   stopEvent.y_coordinate = values[23];
 
-  return stopEvent;
+  return JSON.stringify(stopEvent);
 }
 
 

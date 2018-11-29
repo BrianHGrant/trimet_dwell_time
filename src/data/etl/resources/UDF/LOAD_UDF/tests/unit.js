@@ -1,6 +1,8 @@
 const load = require('../LOAD_UDF.js');
 const assert = require('assert');
 const validator = require('validator')
+const proj4 = require("../proj4js.js")
+const helpers = require("./helpers.js")
 
 // uuidv4() tests
 it('uuidv4 should return false if 2 ids are the same', () => {
@@ -38,4 +40,8 @@ it('makeDate should return 2017-11-29 for 29NOV2017:00:00:00', () => {
 // makes a bigquery formatted time value
 it('makeTime should return 00:00:12 for 12 seconds', () => {
   assert.equal(load.makeTime(12), "00:00:12");
+});
+
+it('proj4 should project xy in 2913 to lat long', () => {
+  assert.equal(helpers.arraysEqual(proj4('EPSG:2913','EPSG:4326',[7695952.6	,676216.3]), [ -122.4743957094032, 45.50451006240588 ]),true);
 });
