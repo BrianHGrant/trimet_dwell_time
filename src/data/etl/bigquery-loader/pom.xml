@@ -156,9 +156,9 @@
   <profiles>
     <profile>
       <id>direct-runner</id>
-      <activation>
+      <!-- <activation>
         <activeByDefault>true</activeByDefault>
-      </activation>
+      </activation> -->
       <!-- Makes the DirectRunner available when running a pipeline. -->
       <dependencies>
         <dependency>
@@ -218,6 +218,9 @@
 
     <profile>
       <id>dataflow-runner</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
       <!-- Makes the DataflowRunner available when running a pipeline. -->
       <dependencies>
         <dependency>
@@ -429,7 +432,7 @@
       <artifactId>hamcrest-core</artifactId>
       <version>${hamcrest.version}</version>
     </dependency>
-    
+
     <dependency>
       <groupId>org.hamcrest</groupId>
       <artifactId>hamcrest-library</artifactId>
@@ -455,7 +458,7 @@
       <version>${beam.version}</version>
       <scope>test</scope>
     </dependency>
-    
+
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>

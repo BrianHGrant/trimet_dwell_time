@@ -1,0 +1,23 @@
+{
+  "name": "load_udf",
+  "version": "1.0.0",
+  "description": "UDF function to be run by CloudDataflow. Processes Raw data into initial Dataset.",
+  "main": "LOAD_UDF.js",
+  "scripts": {
+    "test": "mocha tests/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhgrant8/trimet_dwell_time.git"
+  },
+  "author": "Brian Grant (bhgrant8@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bhgrant8/trimet_dwell_time/issues"
+  },
+  "homepage": "https://github.com/bhgrant8/trimet_dwell_time#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "validator": "^10.9.0"
+  }
+}

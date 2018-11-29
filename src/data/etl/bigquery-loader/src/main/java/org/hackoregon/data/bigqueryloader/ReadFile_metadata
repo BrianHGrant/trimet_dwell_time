@@ -1,0 +1,21 @@
+{
+  "name": "ReadFile",
+  "description": "Pipeline which reads stop events csv and writes to a bigquery table",
+  "parameters": [{
+    "name": "jsTransformPath",
+    "label": "Path to javascript fn for transforming output",
+    "help_text": "Path of the file pattern glob to read from.",
+    "regexes": ["^gs:\/\/[^\n\r]+$"]
+  },
+  {
+    "name": "javascriptTextTransformFunctionName",
+    "label": "UDF Javascript Function Name",
+    "help_text": "Path and filename prefix for writing output files. ex: gs://MyBucket/counts"
+  },
+  {
+    "name": "directory",
+    "label": Temporary directory for BigQuery loading process",
+    "help_text": "Path and filename prefix for writing output files. ex: gs://MyBucket/counts",
+    "regexes": ["^gs:\/\/[^\n\r]+$"]
+  }]
+}
